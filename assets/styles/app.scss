@@ -1,0 +1,49 @@
+// Import Bootstrap CSS and JS
+//@import "~bootstrap/scss/bootstrap";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+
+@font-face {
+    font-family: 'baloo-font';
+    src: url('../fonts/baloobhaina2-bold-webfont.woff2') format('woff2');
+    src: url('../fonts/baloobhaina2-bold-webfont.woff') format('woff');    
+    src: url('../fonts/BalooBhaina2-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'inter-font';
+    src: url('../fonts/inter-variablefont_slntwght-webfont.woff2') format('woff2');
+    src: url('../fonts/inter-variablefont_slntwght-webfont.woff') format('woff');    
+    src: url('../fonts/Inter-VariableFont_slnt,wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'scada-font';
+    src: url('../fonts/scada-bold-webfont.woff2') format('woff2');
+    src: url('../fonts/scada-bold-webfont.woff') format('woff');    
+    src: url('../fonts/Scada-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.eot?mtvijn');
+    src: url('../fonts/icomoon.eot?mtvijn#iefix') format('embedded-opentype'),
+         url('../fonts/icomoon.woff?mtvijn') format('woff'),
+         url('../fonts/icomoon.ttf?mtvijn') format('truetype'),     
+         url('../fonts/icomoon.svg?mtvijn#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+@import "../normalize.css";
+@import "../style.css";

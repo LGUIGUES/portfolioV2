@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ aboutText.title_page|trans }} | {{ parent() }}{% endblock %}
+
+{% block mainContent %}
+<div class="row-about">
+    {{ include('static/_partial_breadcrumb.html.twig') }}<span class="current-page">{{ aboutText.title_page|trans }}</span></nav>
+    <article>
+        <h2>{{ aboutText.title_page|trans }}</h2>
+        {{ include('static/_partial_presentation.html.twig') }}
+    </article>
+    <article>
+        <h3>{{ aboutText.title_diploma }}</h3>
+            <div class="events">
+            <!-- Start for loop -->
+            {% for event in events %}
+            <div class="clearfix event">
+                <p class="title-event">{{ event.title|trans }}</p>
+                <p>{{ event.description|trans }}<span>{{ event.label_obtained }}</span><span class="event-date">{{ event.obtained_date|trans }}</span></p>                    
+                <div>                
+                    <a href="{{ event.link_professional_title|trans }}" target="_blank">
+                        <img class="img-event" src="{{ asset('img/certifications/'~event.visual_name~'_min.png') }}" alt="{{ event.visual_alt_attribute|trans }}">
+                    </a>
+                </div>
+                <ul class="events-links">
+                    <li>
+                        <a href="{{ event.link_professional_title|trans }}" target="_blank">{{ event.link_text|trans }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ asset('download/pdf/'~event.pdf_file_name~'.pdf') }}" target="_blank" rel="noindex, nofollow">{{ event.pdf_text_link|trans }}</a>
+                    </li>
+                </ul>
+            </div>
+            <p class="tirets"></p>
+            {% endfor %}
+            <!-- end for loop -->        
+        </div>
+    </article>
+    <article>
+        <h3>{{ aboutText.title_career|trans }}</h3>    
+        <ul class="row-career">
+            <!-- Start for loop -->
+            {% for job in jobs %}
+            <li>
+                <div class="career-panel panel-{{ job.position }}">
+                    <p class="title-panel">
+                        {{ job.title|trans }}
+                    </p>
+                    <img src="{{ asset('img/logos/'~job.visual_name~'_min.jpg') }}" alt="{{ job.visual_alt_attribute|trans }}">
+                    <p>{{ job.description|trans }}</p>
+                </div>
+            </li>
+            {% endfor %}        
+            <!-- end for loop -->
+        </ul>
+    </article>
+    <div>
+        <a class="download" href="{{ asset('download/pdf/'~aboutText.file_name_cv~'.pdf') }}" target="_blank" rel="noindex, nofollow">{{ aboutText.link_cv|trans }}</a>
+    </div>
+</div>
+{% endblock %}

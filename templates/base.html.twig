@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="apple-touch-icon" sizes="180x180" href="{{ asset('img/favicon/apple_touch_icon.png') }}">
+		<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/favicon/favicon_32x32.png') }}">
+		<link rel="icon" type="image/png" sizes="16x16" href="{{ asset('img/favicon/favicon_16x16.png') }}">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="robots" content="index,follow">
+		<meta name="title" content="{% trans %}Portfolio Laurent GUIGUES | Web Developer{% endtrans %}">
+		<meta name="description" content="{% trans %}Discover my skills as a web integrator developer in this portfolio. Trained with the 3W Academy to learn the 5 main web languages: Html, Css, Js, Php and Sql. Shop around and feel free to contact me.{% endtrans %}">
+		<meta
+		name="author" content="{% trans %}Laurent GUIGUES{% endtrans %}">
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="{% trans %}website{% endtrans %}">
+		<meta property="og:url" content="https://www.laurentguigues.fr">
+		<meta property="og:title" content="{% trans %}Portfolio Laurent GUIGUES | Web Developer{% endtrans %}">
+		<meta property="og:description" content="{% trans %}Discover my skills as a web integrator developer in this portfolio. Trained with the 3W Academy to learn the 5 main web languages: Html, Css, Js, Php and Sql. Shop around and feel free to contact me.{% endtrans %}">
+		<meta property="og:image" content="https://www.laurentguigues.fr/www/assets/img/og/og_card.jpg">
+		<meta
+		property="og:image:alt" content="{% trans %}Portfolio of Laurent GUIGUES | Web Developer{% endtrans %}">
+
+		<!-- Twitter / Linkedin -->
+		<meta property="twitter:card" content="summary_large_image">
+		<meta property="twitter:url" content="https://www.laurentguigues.fr">
+		<meta property="twitter:title" content="{% trans %}Portfolio Laurent GUIGUES | Web Developer{% endtrans %}">
+		<meta property="twitter:description" content="{% trans %}Discover my skills as a web integrator developer in this portfolio. Trained with the 3W Academy to learn the 5 main web languages: Html, Css, Js, Php and Sql. Shop around and feel free to contact me.{% endtrans %}">
+		<meta property="twitter:image" content="https://www.laurentguigues.fr/www/assets/img/og/og_card.jpg">
+
+		<title>
+			{% block title %}{% trans %}Portfolio of Laurent GUIGUES{% endtrans %}
+			{% endblock %}
+		</title>
+
+		{% block stylesheets %}
+			{{ encore_entry_link_tags('app') }}
+		{% endblock %}        
+
+	</head>
+	<body class="scroll">
+		<div class="container">
+			<header>
+				<div class="nav-containt">
+					<nav class="nav-laptop-desktop">
+						<a href="{{ path('app_homepage') }}">{% trans %}Home{% endtrans %}</a>
+						<a href="{{ path('app_displaypage') }}{% trans %}about{% endtrans %}">{% trans %}About{% endtrans %}</a>
+						<a href="{{ path('app_displaypage') }}{% trans %}my-training{% endtrans %}">{% trans %}My training{% endtrans %}</a>
+						<a href="{{ path('app_displaypage') }}{% trans %}my-productions{% endtrans %}">{% trans %}My productions{% endtrans %}</a>
+						<a href="{{ path('app_contact') }}">{% trans %}Contact me{% endtrans %}</a>
+					</nav>
+					<span id="menuClosed" class="icon-burger-menu-closed"></span>
+					<div class="burger-menu">
+						<span id="closeMenu" class="close-menu">Menu</span>
+						<ul>
+							<li><a href="{{ path('app_homepage') }}">{% trans %}Home{% endtrans %}</a></li>
+							<li><a href="{{ path('app_displaypage') }}{% trans %}about{% endtrans %}">{% trans %}About{% endtrans %}</a></li>
+							<li><a href="{{ path('app_displaypage') }}{% trans %}my-training{% endtrans %}">{% trans %}My training{% endtrans %}</a></li>
+							<li><a href="{{ path('app_displaypage') }}{% trans %}my-productions{% endtrans %}">{% trans %}My productions{% endtrans %}</a></li>
+							<li><a href="{{ path('app_contact') }}">{% trans %}Contact me{% endtrans %}</a></li>
+						</ul>
+					</div>
+					<div class="links">
+						<a href="https://github.com/LGUIGUES">
+							<img class="icon" src="{{ asset('img/svg/github-brands.svg') }}" alt="{% trans %}My GitHub profil{% endtrans %}">
+						</a>
+						<a href="https://www.linkedin.com/in/laurent-guigues-25939b69/">
+							<img class="icon" src="{{ asset('img/svg/linkedin-brands.svg') }}" alt="{% trans %}My Linkedin profil{% endtrans %}">
+						</a>						
+						<!-- Display flags Languages -->
+						{% for locale in locales %}
+							{% if locale != app.request.locale %}
+								<a href="{{ path('app_translate', {
+									'locale': locale
+								}) }}">
+									<img class="icon-lang" src="{{ asset('img/'~locale~'.png') }}" alt="{{locale}}">
+								</a>
+							{% endif %}
+						{% endfor %}					
+					</div>
+				</div>
+			</header>
+			<main class="content">
+            {% block mainContent %}{% endblock %}
+            </main>
+				<footer>
+					<ul class="footer-nav">
+						<li>
+							<a href="{{ path('app_displaypage') }}{% trans %}legalnotice{% endtrans %}">{% trans %}Legal Notice{% endtrans %}</a>
+						</li>
+					</ul>
+					<p class="copyright">© GUIGUES Laurent 2021-{{"now"|date('Y')}} </p>
+					<p class="version">{% trans %}Portfolio release 2.0 - Propulsed by Symfony{% endtrans %}</p>
+				</footer>
+				<div>
+					<span id="btnScrollTop" class="arrow-up hidden-btn-scroll"></span>
+				</div>
+			</div>
+            <noscript>{% trans %}Your browser do not take load the javascript !{% endtrans %}</noscript>
+            {% block javascripts %}
+                {{ encore_entry_script_tags('app') }}
+                {{ encore_entry_script_tags('menu') }}                
+                {{ encore_entry_script_tags('scroll') }}
+                {{ encore_entry_script_tags('animation') }}                                                          
+            {% endblock %}            
+		</body>
+	</html>

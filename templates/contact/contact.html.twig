@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ contactText.title_page|trans }} | {{ parent() }}
+{% endblock %}
+
+{% block mainContent %}
+	<div class="row-contact">
+		{{ include('static/_partial_breadcrumb.html.twig') }}<span class="current-page">{{ contactText.title_page|trans }}</span></nav>
+		<section>
+		<h3>{{ contactText.title_page|trans }}</h3>
+		<!-- Display message at user -->
+		{% for message in app.flashes('success') %}
+		<div class="alert alert-success">
+			{{ message|trans }}
+		</div>
+		{% endfor %}
+		{% for message in app.flashes('error') %}
+		<div class="alert alert-danger">
+			{{ message|trans }}
+		</div>
+		{% endfor %}
+		{% for message in app.flashes('warning') %}
+		<div class="alert alert-warning">
+			{{ message|trans }}
+		</div>
+		{% endfor %}			
+			<div class="contact border">
+				<div class="home-form">
+				{{ form_start(contactForm) }}					
+					{{ form(contactForm) }}
+					<div class="info-required">{{ contactText.info_required }}</span>											
+				{{ form_end(contactForm) }}
+				</div>				
+			</div>
+		</section>
+		<aside id="modal" class="legal-notice-off">
+			<div class="legal-notice-container">
+				<span id="closeModal" class="close-modal">{{ contactText.close_modal|trans }}</span>
+				{{ include('static/_partial_legal-notice.html.twig') }}
+			</div>
+		</aside>
+	</div>	
+{% endblock %}
+{% block javascripts %}
+	{{ parent() }}
+	{{ encore_entry_script_tags('modal') }}
+{% endblock %}

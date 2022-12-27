@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ arrayText.title_page|trans }} | {{ parent() }}{% endblock %}
+
+{% block mainContent %}
+<div class="row-legal-notice">
+    {{ include('static/_partial_breadcrumb.html.twig') }}<span class="current-page">{{ arrayText.title_page|trans }}</span></nav>
+    <article>
+        {{ include('static/_partial_legal-notice.html.twig') }}
+    </article>
+</div>
+{% endblock %}

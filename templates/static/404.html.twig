@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ arrayText.title_page|trans }} | {{ parent() }}{% endblock %}
+
+{% block mainContent %}
+<div class="row">
+    <article>
+        {{ include('static/_partial_breadcrumb.html.twig') }}<span class="current-page">{{ arrayText.title_page|trans }}</span></nav>        
+        <div class="bkg-img">
+            <picture>
+                <source media="(max-width: 599px)" srcset="{{ asset('img/'~arrayText.background_image_name_portrait~'_min.jpg') }}">
+                <source media="(min-width: 600px)" srcset="{{ asset('img/'~arrayText.background_image_name_landscape~'_min.jpg') }}">
+                <img class="img-block" src="{{ asset('img/'~arrayText.background_image_name_landscape~'_min.jpg') }}" alt="{{ arrayText.alt_attribute|trans }}">
+            </picture>
+            <div class="container-layer">
+                <div class="global-layer">
+                    <div class="layer-sup">
+                        <div>
+                            <h2 class="text-layer">{{ arrayText.error_message|trans }}</h2>
+                        </div>
+                        <div>
+                            <a class="button" href="{{ path('app_homepage') }}">{{ arrayText.btn_link_return|trans }}</a>
+                        </div>                    
+                    </div>                
+                </div> 
+            </div>                              
+        </div>
+    </article>
+</div>
+{% endblock %}

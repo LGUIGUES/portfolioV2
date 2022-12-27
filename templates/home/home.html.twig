@@ -1,0 +1,101 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ homeText.title_page|trans }} | {{ parent() }}{% endblock %}
+
+{% block mainContent %}
+<section>
+    <div class="intro">
+        <div class="animate-text">
+            <h1 class="name">{{ animationText.name|trans }}</h1>
+            <h2 class="job">{{ animationText.job|trans }}</h2>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h3>{{ aboutText.title_page|trans }}</h3>
+    {{ include('static/_partial_presentation.html.twig') }}
+</section>
+
+<section>
+    <h3>{{ homeText.title_events|trans }}</h3>
+    <div class="events">
+        <!-- Start for loop -->
+        {% for event in events %}
+        <div class="clearfix event">
+            <p class="title-event">{{ event.title|trans }}</p>
+            <p>{{ event.description|trans }}<span>{{ event.label_obtained }}</span><span class="event-date">{{ event.obtained_date|trans }}</span></p>                    
+            <div>                
+                <a href="{{ event.link_professional_title|trans }}" target="_blank">
+                    <img class="img-event" src="{{ asset('img/certifications/'~event.visual_name~'_min.png') }}" alt="{{ event.visual_alt_attribute|trans }}">
+                </a>
+            </div>
+            <ul class="events-links">
+                <li>
+                    <a href="{{ event.link_professional_title|trans }}" target="_blank">{{ event.link_text|trans }}</a>
+                </li>
+                <li>
+                    <a href="{{ asset('download/pdf/'~event.pdf_file_name~'.pdf') }}" target="_blank">{{ event.pdf_text_link|trans }}</a>
+                </li>
+            </ul>
+        </div>
+        <p class="tirets"></p>
+        {% endfor %}
+        <!-- end for loop -->        
+    </div>
+</section>
+
+<section>
+    <div class="formations">
+        <h3 class="title-formation">{{ homeText.title_training|trans }}<a href="https://www.3wa.fr" title="{{ homeText.title_link|trans }}">
+                <img src="{{ asset('img/logos/'~homeText.visual_name_training~'_min.webp') }}" alt="{{ homeText.visual_alt_attribute|trans }}"></a>
+        </h3>
+        <h3>{{ homeText.title_examples|trans }}</h3>        
+        <div class="flex-blocks">
+            <!-- start for loop -->
+            {% for example in examples %}            
+            <div class="block reveal-1">
+                <a class="img-hover" href="{{ example.url }}" target="_blank" title="{{ example.name|trans }}" rel="noindex, nofollow">
+                    <picture>
+                        <source media="(max-width: 320px)" srcset="{{ asset('img/visuals/'~example.visual_name~'_295_min.jpg') }}">
+                        <source media="(max-width: 767px)" srcset="{{ asset('img/visuals/'~example.visual_name~'_385_min.jpg') }}">
+                        <source media="(max-width: 1399px)" srcset="{{ asset('img/visuals/'~example.visual_name~'_650_min.jpg') }}">
+                        <source media="(max-width: 1920px)" srcset="{{ asset('img/visuals/'~example.visual_name~'_743_min.jpg') }}">
+                        <img class="img-block" src="{{ asset('img/visuals/'~example.visual_name~'_743_min.jpg') }}" alt="{{ example.visual_alt_attribute|trans }}">
+                    </picture>
+                    <div class="technos">                                               
+                        <ul class="icons-technos">                            
+                            <li class="mx-0">
+                                <span class="icon-text">{{ homeText.title_technos|trans }}</span> 
+                            </li>
+                            <!-- start for loop -->
+                            {% for technos in example['technos'] %}                            
+                            <li class="mx-0">
+                                <img class="thumbnail html" src="{{ asset('img/logos/'~technos.visual_logo~'_min.jpg') }}" alt="{{ technos.visual_alt_attribute|trans }} " title="{{ technos.techno_name|trans }} ">                           
+                            </li>                            
+                            {% endfor %}
+                            <!-- end for loop -->
+                        </ul>                        
+                    </div>                 
+                </a>
+            </div>
+            {% endfor %}
+            <!-- end for loop -->            
+        </div>
+    </div>
+</section>
+
+<address>
+    <p class="title-address">{{ addressText.title|trans }}<p>
+        <a id="displayMap" class="font-icon address" href="#addressIframe">{{ addressText.address|trans }}</a>
+    <div class="box-map">
+        <iframe sandbox="allow-scripts" class="iframe-map" id="addressIframe" src="{{ addressText.url_map }}" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    <p class="font-icon phone">{{ addressText.phone|trans }}</p>
+    <a class="link-contact" href="{{ path('app_contact') }}">{{ addressText.contact_link|trans }}</a>
+</address>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('home') }}                                            
+{% endblock %}       

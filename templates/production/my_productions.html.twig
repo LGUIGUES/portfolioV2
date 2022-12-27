@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ arrayText.title_page|trans }} | {{ parent() }}{% endblock %}
+
+{% block mainContent %}
+<div class="row-production">
+    {{ include('static/_partial_breadcrumb.html.twig') }}<span class="current-page">{{ arrayText.title_page|trans }}</span></nav>
+    <section>
+        <h2>{{ arrayText.title_page|trans }}</h2>
+        <p>{{ arrayText.description_page|trans }}</p>
+    </section>
+    <article>
+        <!-- start for loop -->
+        {% for production in productions %}        
+        <h2>{{ production.name|trans }}</h2>
+        <p>{{ production.description|trans }}</p>        
+            <div class="visual">                
+                <a class="img-hover" href="{{ production.url }}" title="{{ production.name|trans }}" target="{{ production.target }}" rel="noindex, nofollow">
+                    <picture>
+                        <source media="(max-width: 320px)" srcset="{{ asset('img/visuals/'~production.visual_name~'_295_min.jpg') }}">
+                        <source media="(max-width: 767px)" srcset="{{ asset('img/visuals/'~production.visual_name~'_385_min.jpg') }}">
+                        <source media="(max-width: 1399px)" srcset="{{ asset('img/visuals/'~production.visual_name~'_650_min.jpg') }}">
+                        <source media="(max-width: 1920px)" srcset="{{ asset('img/visuals/'~production.visual_name~'_743_min.jpg') }}">
+                        <img class="img-block" src="{{ asset('img/visuals/'~production.visual_name~'_743_min.jpg') }}" alt="{{ production.visual_alt_attribute|trans }}">
+                    </picture>
+                    <div class="technos">                                               
+                        <ul class="icons-technos">                            
+                            <li class="mx-0">
+                                <span class="icon-text">{{ arrayText.title_technos|trans }}</span> 
+                            </li>
+                            <!-- start for loop -->
+                            {% for technos in production['technos'] %}                            
+                            <li class="mx-0">
+                                <img class="thumbnail html" src="{{ asset('img/logos/'~technos.visual_logo~'_min.jpg') }}" alt="{{ technos.visual_alt_attribute|trans }} " title="{{ technos.techno_name|trans }} ">                           
+                            </li>                            
+                            {% endfor %}
+                            <!-- end for loop -->
+                        </ul>                        
+                    </div>                 
+                </a>
+            </div>       
+        {% endfor %}
+        <!-- end for loop -->
+    </article>    
+</div>
+{% endblock %}

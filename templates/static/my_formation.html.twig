@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ arrayText.title_page|trans }} | {{ parent() }}{% endblock %}
+
+{% block mainContent %}
+<div class="row-formation">
+    {{ include('static/_partial_breadcrumb.html.twig') }}<span class="current-page">{{ arrayText.title_page|trans }}</span></nav>    
+    <section>
+        <div class="formation">
+            <h1>{{ arrayText.title_page|trans }}</h1>
+            <p>{{ arrayText.description_page|trans }}</p>
+        </div>
+    </section>
+    <article>
+        <!-- html part -->           
+        <h2>{{ arrayText.title_html_part|trans }}</h2>
+        <p>{{ arrayText.description_html_part|trans }}</p>
+        <!-- start for loop -->
+        {% for training in trainings['html'] %}  
+        <h3>{{ training.name|trans }}</h3>
+        <p>{{ training.description|trans }}</p>
+        <div class="visual">
+            <a href="https://projects.laurentguigues.fr/{{ training.url }}" target="_blank" title="{{ training.name|trans }}" rel="noindex, nofollow">
+                <picture>
+                    <source media="(max-width: 320px)" srcset="{{ asset('img/visuals/'~training.visual_name~'_295_min.jpg') }}">
+                    <source media="(max-width: 767px)" srcset="{{ asset('img/visuals/'~training.visual_name~'_385_min.jpg') }}">
+                    <source media="(max-width: 1399px)" srcset="{{ asset('img/visuals/'~training.visual_name~'_650_min.jpg') }}">
+                    <source media="(max-width: 1920px)" srcset="{{ asset('img/visuals/'~training.visual_name~'_743_min.jpg') }}">
+                    <img src="{{ asset('img/visuals/'~training.visual_name~'_743_min.jpg') }}" alt="{{ training.visual_alt_attribute|trans }}">
+                </picture>
+            </a>
+        </div>
+        {% endfor %}
+        <!-- end for loop -->
+
+        <!-- js part -->
+        <h2>{{ arrayText.title_js_part|trans }}</h2>
+        <p>{{ arrayText.description_js_part|trans }}</p>
+        <!-- start for loop -->
+        {% for training in trainings['js'] %}  
+        <h3>{{ training.name|trans }}</h3>
+        <p>{{ training.description|trans }}</p>
+        <div class="visual">
+            <a href="https://projects.laurentguigues.fr/{{ training.url }}" target="_blank" title="{{ training.name|trans }}" rel="noindex, nofollow">
+                <picture>
+                    <source media="(max-width: 320px)" srcset="{{ asset('img/visuals/'~training.visual_name~'_295_min.jpg') }}">
+                    <source media="(max-width: 767px)" srcset="{{ asset('img/visuals/'~training.visual_name~'_385_min.jpg') }}">
+                    <source media="(max-width: 1399px)" srcset="{{ asset('img/visuals/'~training.visual_name~'_650_min.jpg') }}">
+                    <source media="(max-width: 1920px)" srcset="{{ asset('img/visuals/'~training.visual_name~'_743_min.jpg') }}">
+                    <img src="{{ asset('img/visuals/'~training.visual_name~'_743_min.jpg') }}" alt="{{ training.visual_alt_attribute|trans }}">
+                </picture>
+            </a>
+        </div>
+        {% endfor %}
+        <!-- end for loop -->
+
+        <!-- php part -->
+        <h2>{{ arrayText.title_php_part|trans }}</h2>
+        <p>{{ arrayText.description_php_part|trans }}</p>
+        <!-- start for loop -->
+        {% for training in trainings['php'] %}  
+        <h3>{{ training.name|trans }}</h3>
+        <p>{{ training.description|trans }}</p>
+        <div class="visual">
+            <a href="https://projects.laurentguigues.fr/{{ training.url }}" target="_blank" title="{{ training.name|trans }}" rel="noindex, nofollow">
+                <picture>
+                    <source media="(max-width: 320px)" srcset="{{ asset('img/visuals/'~training.visual_name~'_295_min.jpg') }}">
+                    <source media="(max-width: 767px)" srcset="{{ asset('img/visuals/'~training.visual_name~'_385_min.jpg') }}">
+                    <source media="(max-width: 1399px)" srcset="{{ asset('img/visuals/'~training.visual_name~'_650_min.jpg') }}">
+                    <source media="(max-width: 1920px)" srcset="{{ asset('img/visuals/'~training.visual_name~'_743_min.jpg') }}">
+                    <img src="{{ asset('img/visuals/'~training.visual_name~'_743_min.jpg') }}" alt="{{ training.visual_alt_attribute|trans }}">
+                </picture>
+            </a>
+        </div>
+        {% endfor %}        
+    </article>
+</div>
+{% endblock %}

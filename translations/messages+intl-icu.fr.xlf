@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="eeLCrr3" resname="Portfolio Laurent GUIGUES | Web Developer">
+        <source>Portfolio Laurent GUIGUES | Web Developer</source>
+        <target>Portfolio de GUIGUES Laurent | Développeur Web</target>
+      </trans-unit>
+      <trans-unit id="wwjHgGQ" resname="Discover my skills as a web integrator developer in this portfolio. Trained with the 3W Academy to learn the 5 main web languages: Html, Css, Js, Php and Sql. Shop around and feel free to contact me.">
+        <source>Discover my skills as a web integrator developer in this portfolio. Trained with the 3W Academy to learn the 5 main web languages: Html, Css, Js, Php and Sql. Shop around and feel free to contact me.</source>
+        <target>Découvrez mes compétences de développeur intégrateur web dans ce portfolio. Formé avec la 3W Académy pour apprendre les 5 principaux langages du web : Html, Css, Js, Php et Sql. Faite le tour et n'hésitez pas à me contacter.</target>
+      </trans-unit>
+      <trans-unit id="TMD5f9I" resname="Laurent GUIGUES">
+        <source>Laurent GUIGUES</source>
+        <target>Laurent GUIGUES</target>
+      </trans-unit>
+      <trans-unit id="dHqPOYO" resname="website">
+        <source>website</source>
+        <target>Site Web</target>
+      </trans-unit>
+      <trans-unit id="EA8dzBz" resname="Portfolio of Laurent GUIGUES | Web Developer">
+        <source>Portfolio of Laurent GUIGUES | Web Developer</source>
+        <target>Portfolio de Laurent GUIGUES | Développeur Web</target>
+      </trans-unit>
+      <trans-unit id="OnhpU4i" resname="Home">
+        <source>Home</source>
+        <target>Accueil</target>
+      </trans-unit>
+      <trans-unit id="Tvyg0Qx" resname="About">
+        <source>About</source>
+        <target>A propos</target>
+      </trans-unit>
+      <trans-unit id="dLVNZC7" resname="My training">
+        <source>My training</source>
+        <target>Ma formation</target>
+      </trans-unit>
+      <trans-unit id="3X7yL6V" resname="My productions">
+        <source>My productions</source>
+        <target>Mes réalisations</target>
+      </trans-unit>
+      <trans-unit id="JP.te9I" resname="Contact me">
+        <source>Contact me</source>
+        <target>Me contacter</target>
+      </trans-unit>
+      <trans-unit id="drgEMxs" resname="My GitHub profil">
+        <source>My GitHub profil</source>
+        <target>Mon profile GitHub</target>
+      </trans-unit>
+      <trans-unit id="dWI29zZ" resname="My Linkedin profil">
+        <source>My Linkedin profil</source>
+        <target>Mon profile Linkedin</target>
+      </trans-unit>
+      <trans-unit id="BY0hgr0" resname="Legal Notice">
+        <source>Legal Notice</source>
+        <target>Mentions légales</target>
+      </trans-unit>
+      <trans-unit id="oQ_cSJN" resname="Portfolio release 2.0 - Propulsed by Symfony">
+        <source>Portfolio release 2.0 - Propulsed by Symfony</source>
+        <target>Portfolio version 2.0 - Propulsé par Symfony</target>
+      </trans-unit>
+      <trans-unit id="pXdtyfo" resname="Your browser do not take load the javascript !">
+        <source>Your browser do not take load the javascript !</source>
+        <target>Votre navigateur ne prends pas en charge le Javascript !</target>
+      </trans-unit>
+      <trans-unit id="bZSR.gX" resname="Portfolio of Laurent GUIGUES">
+        <source>Portfolio of Laurent GUIGUES</source>
+        <target>Portfolio de Laurent GUIGUES</target>
+      </trans-unit>
+      <trans-unit id="ZXipZVY" resname="Your ask contact was well sended !">
+        <source>Your ask contact was well sended !</source>
+        <target>Votre demande de contact a bien été envoyée !</target>
+      </trans-unit>
+      <trans-unit id="pCYuHJv" resname="about">
+        <source>about</source>
+        <target>a-propos</target>
+      </trans-unit>
+      <trans-unit id="es4kvmu" resname="my-training">
+        <source>my-training</source>
+        <target>ma-formation</target>
+      </trans-unit>
+      <trans-unit id="PLcCnU3" resname="my-productions">
+        <source>my-productions</source>
+        <target>mes-realisations</target>
+      </trans-unit>
+      <trans-unit id="CT59X9u" resname="contact">
+        <source>contact</source>
+        <target>contact</target>
+      </trans-unit>
+      <trans-unit id="QVVsThH" resname="legalnotice">
+        <source>legalnotice</source>
+        <target>mentions-legales</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

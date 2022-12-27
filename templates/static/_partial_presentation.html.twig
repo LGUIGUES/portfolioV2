@@ -1,0 +1,9 @@
+<div class="clearfix  presentation">
+    <p>{{ aboutText.aboutIntro|trans }} </p>
+    <div class="portrait">
+        <a href="{{ path('app_displaypage', {slug: aboutText.url}) }}">
+            <img class="portrait-img" src="{{ asset('img/'~aboutText.visual_name~'.webp') }}" alt="{{ aboutText.visual_alt_attribute|trans }}">
+        </a>
+    </div>
+    <p>{{ aboutText.about|trans }}</p>
+</div>

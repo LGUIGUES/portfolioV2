@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="ZHz6kbI" resname="Firstname">
+        <source>Firstname</source>
+        <target>Prénom</target>
+      </trans-unit>
+      <trans-unit id="Q9E0bpc" resname="Your firstname">
+        <source>Your firstname</source>
+        <target>Votre prénom</target>
+      </trans-unit>
+      <trans-unit id="n8BLQYb" resname="Lastname *">
+        <source>Lastname *</source>
+        <target>Nom</target>
+      </trans-unit>
+      <trans-unit id="Q1Yscg2" resname="Your lastname">
+        <source>Your lastname</source>
+        <target>Votre nom</target>
+      </trans-unit>
+      <trans-unit id="1lLVFeu" resname="Email *">
+        <source>Email *</source>
+        <target>Email</target>
+      </trans-unit>
+      <trans-unit id="l68FGij" resname="your@email.com">
+        <source>your@email.com</source>
+        <target>votre@email.fr</target>
+      </trans-unit>
+      <trans-unit id="Y9zriAC" resname="Phone">
+        <source>Phone</source>
+        <target>Téléphone</target>
+      </trans-unit>
+      <trans-unit id="yaMXk5g" resname="01.02.03.04.05">
+        <source>01.02.03.04.05</source>
+        <target>01.02.03.04.05</target>
+      </trans-unit>
+      <trans-unit id="4Rq_zrF" resname="Message subject">
+        <source>Message subject</source>
+        <target>Objet du message</target>
+      </trans-unit>
+      <trans-unit id="gzrulnn" resname="Subject of your message">
+        <source>Subject of your message</source>
+        <target>Objet de votre message</target>
+      </trans-unit>
+      <trans-unit id="kqm_uJ2" resname="Message *">
+        <source>Message *</source>
+        <target>Message</target>
+      </trans-unit>
+      <trans-unit id="XvzQ.fX" resname="Enter your message...">
+        <source>Enter your message...</source>
+        <target>Entrez votre message...</target>
+      </trans-unit>
+      <trans-unit id="YUUQSD4" resname="I accept the privacy policy.(Click to read)">
+        <source>I accept the privacy policy.(Click to read)</source>
+        <target>J'accepte la politique de confidentialité.(Cliquez pour lire)</target>
+      </trans-unit>
+      <trans-unit id="FV_BbAQ" resname="Submit">
+        <source>Submit</source>
+        <target>Envoyer</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

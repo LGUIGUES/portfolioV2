@@ -1,0 +1,5 @@
+# robots.txt
+User-agent: *
+Allow: /
+# Sitemap
+Sitemap: https://www.laurentguigues.fr/sitemap.xml
